@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.Handler.NettyClientHandler;
+import com.example.demo.handler.NettyClientHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;

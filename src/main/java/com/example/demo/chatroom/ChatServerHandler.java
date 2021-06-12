@@ -1,5 +1,6 @@
 package com.example.demo.chatroom;
 
+import com.example.demo.entity.User;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -25,9 +26,9 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
         Channel channel = ctx.channel();
         channelGroup.forEach(ch ->{
             if (channel != ch){
-                ch.writeAndFlush("[客户端]发送了消息："+channel.remoteAddress()+msg+"\n");
+                ch.writeAndFlush("[客户端]发送了消息："+channel.remoteAddress()+msg+"_");
             }else {
-                ch.writeAndFlush("[自己]发送了消息："+msg+"\n");
+                ch.writeAndFlush("[自己]发送了消息："+msg+"_");
             }
         } );
     }
